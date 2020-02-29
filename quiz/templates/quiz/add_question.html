@@ -5,6 +5,7 @@
     <title>Add Quiz</title>
 </head>
 <body>
+{{ quiz.quiz_text }}
 <form action="{% url 'quiz:add_question' quiz.id %}" method="post">
     {% csrf_token %}
     {{ form }}

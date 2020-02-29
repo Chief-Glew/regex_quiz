@@ -77,7 +77,7 @@ def add_question(request, quiz_id):
             else:
                 return redirect('quiz:quiz', quiz_id)
     else:
-        form = QuestionForm({'quiz': quiz})
+        form = QuestionForm(initial={'quiz': quiz})
 
     context['form'] = form
     return render(request, 'quiz/add_question.html', context)
