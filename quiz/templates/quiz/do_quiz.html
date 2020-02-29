@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ quiz.title }}</title>
+</head>
+<body>
+{{ quiz.quiz_text }}<br>
+<br>
+{{ question.question }}<br>
+{% if correct %}
+Well Done! you got it!<br>
+{% endif %}
+<form action="{% url 'quiz:do_quiz' quiz.id question.id %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="check">
+</form>
+<form>
+    <button type="submit" formmethod="get" {% if not correct %} disabled {% endif %}>
+        Next Question
+    </button>
+</form>
+</body>
+</html>

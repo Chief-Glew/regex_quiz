@@ -3,6 +3,7 @@ from django.db import models
 
 class Quiz(models.Model):
     quiz_text = models.CharField(max_length=1000)
+    title = models.CharField(max_length=200)
 
 
 class Question(models.Model):

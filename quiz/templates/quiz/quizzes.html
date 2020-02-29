@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizzes</title>
+</head>
+<body>
+{% if quizzes %}
+    <ul>
+    {% for quiz in quizzes %}
+        <li><a href="{% url 'quiz:quiz' quiz.id %}">{{ quiz.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ quiz.title }}</title>
+</head>
+<body>
+{{ quiz.title }}<br>
+{{ quiz.quiz_text }}<br>
+<a href="{% url 'quiz:do_quiz' quiz.id %}">Start The Quiz!</a>
+</body>
+</html>
